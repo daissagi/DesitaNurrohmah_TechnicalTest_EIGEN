@@ -1,0 +1,97 @@
+swagger: '2.0'
+info:
+  description: LPT APis
+  version: 1.0.0
+  title: Backend Test Case API's
+basePath: /api/
+
+#Book
+tags:
+  - name: Book
+    description: Manage Book in Library
+
+paths:
+  /pet/{book_code}:
+    get:
+      tags:
+        - book
+      summary: Find book by book codes
+      description: Returns a single book
+      operationId: getbookBybookcode
+      parameters:
+        - name: book_code
+          in: path
+          description: ID of book to return
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Book'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Book not found
+      security:
+        - api_key: []
+        - petstore_auth:
+            - write:books
+            - read:books
+
+
+# tags:
+#   - name: Category
+#     description: Manage Category
+
+# paths:
+#   /categories:
+#     get:
+#       tags:
+#         - Category
+#       summary: Manage Category
+#       description: 'Manage Category with this API'
+#       operationId: category
+#       consumes:
+#         - application/json
+#       produces:
+#         - application/json
+#       responses:
+#         '200':
+#           description: successful operation
+#         '400':
+#           description: Bad request
+#     post:
+#       tags:
+#         - Category
+#       summary: Create Category
+#       description: 'Create Category with this API'
+#       operationId: createCategory
+#       consumes:
+#         - application/json
+#       produces:
+#         - application/json
+#       parameters:
+#         - in: query
+#           name: name
+#           type: string
+#           required: true  
+#       responses:
+#         '200':
+#           description: successful operation
+#         '400':
+#           description: Bad request
+#       security:
+#         - api_key: [] 
+
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: Authorization
+    in: header

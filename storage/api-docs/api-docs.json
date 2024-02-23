@@ -1,0 +1,418 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Backend Test Case API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/data.json": {
+            "get": {
+                "operationId": "f6549053fdd99b4f4d5ef6fc75fef529",
+                "responses": {
+                    "200": {
+                        "description": "The data"
+                    }
+                }
+            }
+        },
+        
+        
+        "/api/book/gets": {
+            "get": {
+                "tags": [
+                    "Book"
+                ],
+                "summary": "Get List of Book",
+                "operationId": "9c62b6eaf4f47a6334f45ac81eedfadf",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "book_code": {
+                                                        "type": "string",
+                                                        "example": "AB-12"
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "example title"
+                                                    },
+                                                    "author": {
+                                                        "type": "string",
+                                                        "example": "example author"
+                                                    },
+                                                    "stock": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2021-12-11T09:25:53.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "example": "2021-12-11T09:25:53.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/api/book/get": {
+            "get": {
+                "tags": [
+                    "Book"
+                ],
+                "summary": "Get List of Unborrowed Book",
+                "operationId": "9c62b6eaf4f47a6334f45ac81eedfads",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "book_code": {
+                                                        "type": "string",
+                                                        "example": "AB-12"
+                                                    },
+                                                    "title": {
+                                                        "type": "string",
+                                                        "example": "example title"
+                                                    },
+                                                    "author": {
+                                                        "type": "string",
+                                                        "example": "example author"
+                                                    },
+                                                    "stock": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2021-12-11T09:25:53.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "example": "2021-12-11T09:25:53.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/api/member/gets": {
+            "get": {
+                "tags": [
+                    "Member"
+                ],
+                "summary": "Get List of Members",
+                "operationId": "9c62b6eaf4f47a6334f45ac81eedfadf",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "member_code": {
+                                                        "type": "string",
+                                                        "example": "M000"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "example name"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2021-12-11T09:25:53.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "example": "2021-12-11T09:25:53.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/api/transaction/getBorrowedBooksInfo": {
+            "get": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Get Member by Count Borrowed Book",
+                "operationId": "79780d7a6536643763e964e20fb983ab",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "member_code": {
+                                                        "type": "string",
+                                                        "example": "M000"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "example name"
+                                                    },
+                                                    "borrowed_book": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2021-12-11T09:25:53.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "example": "2021-12-11T09:25:53.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/api/transaction/store": {
+            "post": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Create Transaction",
+                "operationId": "75a119bd9d0023e90ac8feb22bf59575",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "book_code": {
+                                                "type": "string"
+                                            },
+                                            "member_code": {
+                                                "type": "string"
+                                            },
+                                            "borrowed_at": {
+                                                "type": "string"
+                                            },
+                                            "returned_at": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "book_code": "AB-12",
+                                    "member_code": "M000",
+                                    "borrowed_at": "2021-12-11",
+                                    "returned_at": "2021-12-15"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "transaction_id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "book_code": {
+                                            "type": "string",
+                                            "example": "AB-12"
+                                        },
+                                        "member_code": {
+                                            "type": "string",
+                                            "example": "M000"
+                                        },
+                                        "borrowed_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11"
+                                        },
+                                        "returned_at": {
+                                            "type": "string",
+                                            "example": "2021-12-15"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "invalid",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "fail"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        "/api/transaction/update/{transaction_id}": {
+            "put": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Update Transaction for return the book has borrowed",
+                "operationId": "8c88a825db408e19ccecf67263a61ec8",
+                "parameters": [
+                    {
+                        "name": "transaction_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "number"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "transaction_id": {
+                                                "type": "number"
+                                            },
+                                            "book_code": {
+                                                "type": "string"
+                                            },
+                                            "member_code": {
+                                                "type": "string"
+                                            },
+                                            "borrowed_at": {
+                                                "type": "string"
+                                            },
+                                            "returned_at": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "transaction_id": "1",
+                                    "book_code": "AB-12",
+                                    "member_code": "M000",
+                                    "borrowed_at": "2021-12-11",
+                                    "returned_at": "2021-12-15"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "transaction_id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "book_code": {
+                                            "type": "string",
+                                            "example": "AB-12"
+                                        },
+                                        "member_code": {
+                                            "type": "string",
+                                            "example": "M000"
+                                        },
+                                        "borrowed_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11"
+                                        },
+                                        "returned_at": {
+                                            "type": "string",
+                                            "example": "2021-12-11"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
